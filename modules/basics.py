@@ -193,6 +193,7 @@ class Result():
             res = f'{r}:'
             if isinstance(self.results[r], dict):
                 for d in sorted(self.results[r]):
+                    if d not in comp.results[r]: continue
                     diff = self.results[r][d][0]-comp.results[r][d][0]
                     if frac_comp: diff /= 0.01*comp.results[r][d][0]
                     diff_unc = np.sqrt(np.square(comp.results[r][d][1])+np.square(self.results[r][d][1]))

@@ -30,21 +30,21 @@ The experiments are run using [Jupyter Notebooks](https://jupyter.org/), which c
 
  - `jupyter notebook`
 
- In the browser window which should have opened, navigate to the `notebooks` directory. Here there are several directories and four notebooks. Each directory is associated with a different experiment and contains all the notebooks relevant to that particular experiment.
+In the browser window which should have opened, navigate to the `notebooks` directory. Here there are several directories and four notebooks. Each directory is associated with a different experiment and contains all the notebooks relevant to that particular experiment.
 
- ### Running experiments
+### Running experiments
 
- Each directory contains a single notebook which can be duplicated to run multiple times and save the results. Experiment 13 (`13_swish_ensemble_embed_aug_onecycle_dense`), which was the final model used for the paper, contains an example of this where the same experiment was run six different times on six different computing setups.
- 
- Rerunning of the experiments also uses different random seeds for splitting of the validation data, as described in the paper. This is achieved by configuring the third cell in the notebooks, which contains `experiment = Experiment(NAME, 'mbp', RESULTS_PATH)`. Where `NAME` is the basic of the experiment, e.g. `'13_swish_ensemble_embed_aug_onecycle_dense'`, and `'mbp'` is the name of the computing setup. These names are used to lookup particular settings in the `Experiment` class, defined in `./modules/basics.py`, where each machine is assigned its own random seed, as well as a description which is used later for annotating plots and results. When `Experiment.save()` is called, the results are written to `./results/{experiment name}_{machine name}.json'`.
+Each directory contains a single notebook which can be duplicated to run multiple times and save the results. Experiment 13 (`13_swish_ensemble_embed_aug_onecycle_dense`), which was the final model used for the paper, contains an example of this where the same experiment was run six different times on six different computing setups.
 
- Each notebook is designed to be run top-to-bottom, except for those in `17_hyperparam_search` which will be discussed later.
+Rerunning of the experiments also uses different random seeds for splitting of the validation data, as described in the paper. This is achieved by configuring the third cell in the notebooks, which contains `experiment = Experiment(NAME, 'mbp', RESULTS_PATH)`. Where `NAME` is the basic of the experiment, e.g. `'13_swish_ensemble_embed_aug_onecycle_dense'`, and `'mbp'` is the name of the computing setup. These names are used to lookup particular settings in the `Experiment` class, defined in `./modules/basics.py`, where each machine is assigned its own random seed, as well as a description which is used later for annotating plots and results. When `Experiment.save()` is called, the results are written to `./results/{experiment name}_{machine name}.json'`.
 
- ### Comparing results
+Users should edit `Experiment` in `./modules/basics.py` to include their own machines and names. Each notebook is designed to be run top-to-bottom, except for those in `17_hyperparam_search` which will be discussed later.
 
- `notebooks/Results_Viewing.ipynb` takes experiment results from `./results` and compares average performance between configurations. The variable `BLIND` determines whether the private AMS results should be shown to the user. By default this is `True` to attempt to preserve challenge conditions. It is recommend to only set this to `False` once you are happy with your model configuration.
+### Comparing results
 
- Results are loaded using the `Result` class located in ./modules/basics.py`, which loads up the results and computes mean values for the metrics, and also has functions for comparing configurations and producing plots.
+`notebooks/Results_Viewing.ipynb` takes experiment results from `./results` and compares average performance between configurations. The variable `BLIND` determines whether the private AMS results should be shown to the user. By default this is `True` to attempt to preserve challenge conditions. It is recommend to only set this to `False` once you are happy with your model configuration.
+
+Results are loaded using the `Result` class located in ./modules/basics.py`, which loads up the results and computes mean values for the metrics, and also has functions for comparing configurations and producing plots.
 
 The git repo currently ships with single results for each experiment, except for the final model (experiment 13) where six example results are available. In order to reproduce the results of the paper, one should run each experiment several more times, to get average results.
 
@@ -68,7 +68,7 @@ Please cite as:
   author        = {Giles Chatham Strong},  
   title         = {On the impact of modern deep-learning techniques to the performance and time-requirements of classification models in experimental high-energy physics},  
   year          = 2020,  
-  eprint        =   {2002.01427},  
-  archivePrefix =   {arXiv},  
-  primaryClass  =   {physics.data-an}  
+eprint        =   {2002.01427},  
+archivePrefix =   {arXiv},  
+primaryClass  =   {physics.data-an}  
 }
