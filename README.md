@@ -1,6 +1,6 @@
 # On the impact of modern deep-learning techniques to the performance and time-requirements of classification models in experimental high-energy physics
 
-This repo is designed to support the paper "On the impact of modern deep-learning techniques to the performance and time-requirements of classification models in experimental high-energy physics", Strong, 2019, 	[arXiv:2002.01427 [physics.data-an]](https://arxiv.org/abs/2002.01427). It contains code to rerun the experiments performed in the paper to reproduce the results, allow users to better understand how each method is used, and provide a baseline for future comparisons.
+This repo is designed to support the paper "On the impact of modern deep-learning techniques to the performance and time-requirements of classification models in experimental high-energy physics", Strong, 2019, [arXiv:2002.01427 [physics.data-an]](https://arxiv.org/abs/2002.01427). It contains code to rerun the experiments performed in the paper to reproduce the results, allow users to better understand how each method is used, and provide a baseline for future comparisons.
 
 ## Installation
 
@@ -12,12 +12,11 @@ This repo is designed to support the paper "On the impact of modern deep-learnin
 1. `wget -O data/atlas-higgs-challenge-2014-v2.csv.gz http://opendata.cern.ch/record/328/files/atlas-higgs-challenge-2014-v2.csv.gz`
 1. `gunzip data/atlas-higgs-challenge-2014-v2.csv.gz`
 
-
 ### Install requirements
 
 #### Via PIP
 
- - `pip install -r requirements.txt`
+- `pip install -r requirements.txt`
 
 #### Via Conda environment
 
@@ -28,7 +27,7 @@ This repo is designed to support the paper "On the impact of modern deep-learnin
 
 The experiments are run using [Jupyter Notebooks](https://jupyter.org/), which can be accessed by running:
 
- - `jupyter notebook`
+- `jupyter notebook`
 
 In the browser window which should have opened, navigate to the `notebooks` directory. Here there are several directories and four notebooks. Each directory is associated with a different experiment and contains all the notebooks relevant to that particular experiment.
 
@@ -42,7 +41,7 @@ Users should edit `Experiment` in `./modules/basics.py` to include their own mac
 
 ### Comparing results
 
-`notebooks/Results_Viewing.ipynb` takes experiment results from `./results` and compares average performance between configurations. The variable `BLIND` determines whether the private AMS results should be shown to the user. By default this is `True` to attempt to preserve challenge conditions. It is recommend to only set this to `False` once you are happy with your model configuration.
+`notebooks/Results_Viewing.ipynb` takes experiment results from `./results` and compares average performance between configurations. The variable `BLIND` determines whether the private AMS results should be shown to the user. By default this is `True` to attempt to preserve challenge conditions. It is recommended to only set this to `False` once you are happy with your model configuration.
 
 Results are loaded using the `Result` class located in ./modules/basics.py`, which loads up the results and computes mean values for the metrics, and also has functions for comparing configurations and producing plots.
 
@@ -50,15 +49,15 @@ The git repo currently ships with single results for each experiment, except for
 
 ### Hyper-parameter scan
 
-The last experiment (17) is the hyper-parameter scan used in to try and find a better architecture. The notebook included when run will sample parameters and train an ensemble of three networks. This repeats 30 times. Results are save between each iteration and past results are automatically loaded. This notebook should ideally be run on several machines simultaneously, which may need restarting from time to time according to memory requirements.
+The last experiment (17) is the hyper-parameter scan used to try to find a better architecture. The notebook included when run will sample parameters and train an ensemble of three networks. This repeats 30 times. Results are saved between each iteration and past results are automatically loaded. This notebook should ideally be run on several machines simultaneously, which may need restarting from time to time according to memory requirements.
 
 Once sufficient results have been collected, `notebooks/17_hyperparam_search/Analysis.ipynb` can be used to analyse them, fit the Gaussian processes, and discover promising new architectures. It is left to the user to configure new experiments to run these new architectures, if they so wish.
 
 ### Misc. notebooks
 
- - `notebooks/Results_Viewing.ipynb` contains code to plot out and view features from the data
- - `notebooks/Feature_Selection.ipynb` runs the feature selection tests used for the paper
- - `notebooks/Feature_Selection-Full.ipynb` runs a more advanced set of feature selection tests which were not used for the paper, but might of interest to the reader
+- `notebooks/Results_Viewing.ipynb` contains code to plot out and view features from the data
+- `notebooks/Feature_Selection.ipynb` runs the feature selection tests used for the paper
+- `notebooks/Feature_Selection-Full.ipynb` runs a more advanced set of feature selection tests which were not used for the paper, but might of interest to the reader
 
 ## Citation
 
