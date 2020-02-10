@@ -449,3 +449,4 @@ def get_bottleneck_output(model, bottleneck_idx:int, inputs, pre_act:bool=False)
         hook = FowardHook(bn[-1])
         model.predict(inputs)
         return to_np(hook.output.squeeze())
+        

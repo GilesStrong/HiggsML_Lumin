@@ -1,0 +1,9 @@
+name: higgsml_lumin
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python==3.6.5
+  - pip
+  - pip:
+    - lumin==0.5.0
