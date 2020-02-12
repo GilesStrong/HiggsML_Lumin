@@ -1,2 +1,2 @@
-lumin==0.5.0
+lumin==0.5.1
 scikit-optimize==0.5.2
