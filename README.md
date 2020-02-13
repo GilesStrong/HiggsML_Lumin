@@ -59,6 +59,10 @@ Once sufficient results have been collected, `notebooks/17_hyperparam_search/Ana
 - `notebooks/Feature_Selection.ipynb` runs the feature selection tests used for the paper
 - `notebooks/Feature_Selection-Full.ipynb` runs a more advanced set of feature selection tests which were not used for the paper, but might of interest to the reader
 
+## Paper results
+
+The code in this repo is a refactoring of the original experimental framework, since the software library, [LUMIN](https://github.com/GilesStrong/lumin), evolved alongside this study, not all of the original versions of the experiment are fully compatible with the latest version. The notebooks included, however, have been updated to run with v0.5.1 of LUMIIN. The actual results presented in the paper, however, are included in the directory `./paper_results/results` and are viewable using `./paper_results/Results_Viewing.ipynb`.
+
 ## Citation
 
 Please cite as:
