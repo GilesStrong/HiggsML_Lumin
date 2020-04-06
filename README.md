@@ -1,6 +1,6 @@
 # On the impact of modern deep-learning techniques to the performance and time-requirements of classification models in experimental high-energy physics
 
-This repo is designed to support the paper "On the impact of modern deep-learning techniques to the performance and time-requirements of classification models in experimental high-energy physics", Strong, 2019, [arXiv:2002.01427 [physics.data-an]](https://arxiv.org/abs/2002.01427). It contains code to rerun the experiments performed in the paper to reproduce the results, allow users to better understand how each method is used, and provide a baseline for future comparisons.
+This repo is designed to support the paper "On the impact of modern deep-learning techniques to the performance and time-requirements of classification models in experimental high-energy physics", Strong, 2020, [arXiv:2002.01427 [physics.data-an]](https://arxiv.org/abs/2002.01427). It contains code to rerun the experiments performed in the paper to reproduce the results, allow users to better understand how each method is used, and provide a baseline for future comparisons.
 
 ## Installation
 
